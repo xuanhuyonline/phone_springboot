@@ -1,23 +1,21 @@
 package com.lxhuy.spring.model;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "companies")
 //@Getter
 //@Setter
-public class Category {
+public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private List<Phone> phones = new ArrayList<>();
 
     public Long getId() {

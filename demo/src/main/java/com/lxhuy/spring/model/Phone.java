@@ -21,9 +21,11 @@ public class Phone {
 
     private String pin;
 
+    private Integer price;
+
     @ManyToOne()
-    @JoinColumn(name="category_id")
-    private Category category;
+    @JoinColumn(name="companies_id")
+    private Company company;
 
     public Long getId() {
         return id;
@@ -73,11 +75,21 @@ public class Phone {
         this.pin = pin;
     }
 
-    public Category getCategory() {
-        return category;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+
 }

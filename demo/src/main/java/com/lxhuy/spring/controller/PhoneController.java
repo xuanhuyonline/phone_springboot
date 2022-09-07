@@ -1,5 +1,7 @@
 package com.lxhuy.spring.controller;
 
+import com.lxhuy.spring.model.Company;
+import com.lxhuy.spring.model.Employee;
 import com.lxhuy.spring.model.Phone;
 import com.lxhuy.spring.service.PhoneService;
 import lombok.AllArgsConstructor;
@@ -20,7 +22,13 @@ public class PhoneController {
 
 
     @PostMapping
-    public Phone create (@RequestBody Phone phone ) {
+    public Phone create (@RequestBody Phone phone) {
         return phoneService.create(phone);
     }
+
+    @PutMapping
+    public Phone update (@RequestBody Phone phone) {
+        return  phoneService.update(phone);
+    }
+
 }

@@ -18,6 +18,7 @@ public class Company {
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private List<Phone> phones = new ArrayList<>();
 
+
     public Long getId() {
         return id;
     }
@@ -33,4 +34,5 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
 }

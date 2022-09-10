@@ -1,7 +1,5 @@
 package com.lxhuy.spring.controller;
 
-import com.lxhuy.spring.model.Company;
-import com.lxhuy.spring.model.Employee;
 import com.lxhuy.spring.model.Phone;
 import com.lxhuy.spring.service.PhoneService;
 import lombok.AllArgsConstructor;
@@ -26,9 +24,20 @@ public class PhoneController {
         return phoneService.create(phone);
     }
 
+
     @PutMapping
     public Phone update (@RequestBody Phone phone) {
         return  phoneService.update(phone);
+    }
+
+    @GetMapping("/{id}")
+    public Phone findById(@PathVariable("id") Long id){
+        return phoneService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete (@PathVariable("id") Long id) {
+        phoneService.delete(id);
     }
 
 }

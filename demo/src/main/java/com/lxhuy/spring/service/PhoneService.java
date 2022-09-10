@@ -1,6 +1,7 @@
 package com.lxhuy.spring.service;
 
 import com.lxhuy.spring.model.Company;
+import com.lxhuy.spring.model.Customer;
 import com.lxhuy.spring.model.Employee;
 import com.lxhuy.spring.model.Phone;
 import com.lxhuy.spring.repository.CompanyRepository;
@@ -55,5 +56,13 @@ public class PhoneService {
         }
 
         return phoneRepository.save(phoneOptional);
+    }
+
+    public Phone findById(Long id) {
+        return phoneRepository.findById(id).get();
+    }
+
+    public void delete(Long id) {
+        phoneRepository.deleteById(id);
     }
 }
